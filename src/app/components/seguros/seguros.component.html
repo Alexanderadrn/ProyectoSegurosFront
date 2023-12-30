@@ -1,0 +1,31 @@
+<div class="d-grid gap-2 d-md-block">
+
+  <button type="button" style="margin:10px 0;" class="btn btn-outline-success"(click)="registrarSeguros()">Insertar Seguros</button>
+</div>
+<table class="table table-hover">
+    <thead>
+      <tr style="text-align: center;">
+        <th scope="col">Nombres</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Suma Asegurada</th>
+        <th scope="col">Prima</th>
+        <th scope="col">Acciones</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of seguros" style="text-align: center;">
+        <td>{{item.nombreSeguo}}</td>
+        <td>{{item.codigoSeguro}}</td>
+        <td>{{item.sumaAsegurada}}</td>
+        <td>{{item.prima}}</td>
+        <td>
+          <button class="btn"  style="margin: 0 5px; color: rgb(91, 248, 91);"(click)="actualizarSeguro(item)"><mat-icon>edit_square</mat-icon>Editar</button>
+          
+          <button  class="btn" style="margin: 0 5px;color:rgb(255, 65, 65)" (click)="openConfirmationDialog(item)"><mat-icon>delete</mat-icon>Eliminar</button>
+        </td>
+       
+      </tr>
+      
+    </tbody>
+  </table>

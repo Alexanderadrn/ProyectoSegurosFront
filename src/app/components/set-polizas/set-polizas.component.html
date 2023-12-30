@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="modal-header">
+    <h3 class="modal-title" id="exampleModalLabel">Asignar póliza</h3>
+  </div>
+  <label for="idPersonas">Seleccione la Persona:</label>
+  <mat-select name="idPersonas" id="idPersonas" class="idPersonas" [(ngModel)]="personasSelected.idPersonas"
+    placeholder="Seleccione una Persona" (selectionChange)="getPolizas()">
+    <mat-option *ngFor="let item of personas" [value]="item.idPersonas">
+      {{item.nombrePersonas}}
+    </mat-option>
+  </mat-select>
+  <label for="iddepartamento">Seleccione el Seguro</label>
+  <mat-select name="iddepartamento" id="iddepartamento" class="iddepartamento" [(ngModel)]="segurosSelected.idSeguro"
+    placeholder="Seleccione un Seguro">
+    <mat-option *ngFor="let item of seguros" [value]="item.idSeguro">
+      {{item.nombreSeguo}}
+    </mat-option>
+  </mat-select>
+  <button mat-raised-button (click)="setPoliza()" style="margin-right: 10px;">Registrar Poliza</button>
+
+  <table class="table table-hover">
+    <thead>
+      <tr style="text-align: center;">
+        
+        <th scope="col">Nombre Persona</th>
+        <th scope="col">Cedula Persona</th>
+        <th scope="col">Nombre Seguro</th>
+        <th scope="col">Codigo Seguro</th>
+        <th scope="col">Cantidad Asegurada</th>
+        <th scope="col">Prima</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of polizas" style="text-align: center;">
+        
+        <td>{{item.nombrePersonas}}</td>
+        <td>{{item.cedulaPersona}}</td>
+        <td>{{item.nombreSeguo}}</td>
+        <td>{{item.codSeguro}}</td>
+        <td>{{item.sumaAsegurada}}</td>
+        <td>{{item.prima}}</td>
+
+
+      </tr>
+
+    </tbody>
+  </table>

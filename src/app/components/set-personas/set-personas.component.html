@@ -1,0 +1,35 @@
+<div class="content d-flex justify-content-center" style="box-sizing: border-box;">
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <h1>Personas</h1>
+  
+        <form>
+            <div class="row" style="margin-bottom: 10px;">
+            <div class="col">
+              <label for="form-control">Nombre:</label>
+              <input type="text" class="form-control" name="nombrePersonas" (keypress)="onKeyPressTexto($event)"[(ngModel)]="personas.nombrePersonas">
+            </div>
+            <div class="col">
+              <label for="form-control">Cedula:</label>
+              <input type="email" class="form-control" name="cedulaPersonas"(keypress)="onKeyPressNumero($event)" [(ngModel)]="personas.cedulaPersonas">
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 10px;">
+            <div class="col">
+              <label for="form-control">Edad:</label>
+              <input type="text" class="form-control" name="edadPersonas"(keypress)="onKeyPressNumero($event)"  [(ngModel)]="personas.edadPersonas">
+            </div>
+            <div class="col">
+              <label for="form-control">Telefono</label>
+              <input type="text" class="form-control" name="telefonosPersonas" (keypress)="onKeyPressNumero($event)"[(ngModel)]="personas.telefonoPersonas">
+            </div>
+          </div>
+          
+        </form>
+         <div>
+          <button class="btn btn-secondary" style="margin: 5px;" (click)="setPersonas()">{{titulo}}</button>
+          <button class="btn btn-primary" style="margin: 5px;" (click)="dismissModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
